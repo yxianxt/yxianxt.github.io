@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>钻石领域官方网站</title>
+<link rel="shortcut icon" href="icon/lemon2.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+function setCookie(cname,cvalue,exdays){
+  var d = new Date();
+  d.setTime(d.getTime()+(exdays*24*60*60*1000));
+  var expires = "expires="+d.toGMTString();
+  document.cookie = cname+"="+cvalue+"; "+expires;
+}
+function getCookie(cname){
+  var name = cname + "=";
+  var ca = document.cookie.split(';');
+  for(var i=0; i<ca.length; i++) {
+    var c = ca[i].trim();
+    if (c.indexOf(name)==0) { return c.substring(name.length,c.length); }
+  }
+  return "";
+}
+function checkCookie(){
+  var user=getCookie("username");
+  if (user!=""){
+    alert("欢迎 " + user + " 再次访问钻石领域");
+  }
+  else {
+    user = prompt("请输入你的名称(会作为cookie数据保存在本地，我不会知道你输入的内容，请放心不会暴露你的任何个人信息）","");
+      if (user!="" && user!=null){
+        setCookie("username",user,30);
+      }
+  }
+}
+</script>
+<style>
+* {
+    box-sizing: border-box;
+}
+
+/* body 样式 */
+body {
+    font-family: Arial;
+    margin: 0;
+}
+
+/* 标题 */
+.header {
+    padding: 80px;
+    text-align: center;
+    background-image:url(image/minecraft-003.jpg);
+    background-size: 100%;
+    color: white;
+}
+
+/* 标题字体加大 */
+.header h1 {
+    font-size: 40px;
+}
+
+/* 导航 */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+}
+
+/* 导航栏样式 */
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+/* 右侧链接*/
+.navbar a.right {
+    float: right;
+}
+
+/* 鼠标移动到链接的颜色 */
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* 列容器 */
+.row {  
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+}
+
+/* 创建两个列 */
+/* 边栏 */
+.side {
+    -ms-flex: 30%; /* IE10 */
+    flex: 30%;
+    background-color: #d0d0d0;
+    padding: 20px;
+}
+
+/* 主要的内容区域 */
+.main {   
+    -ms-flex: 70%; /* IE10 */
+    flex: 70%;
+    background: url(image/background.jpg) no-repeat;
+    background-size: 100% 100%;
+    padding: 20px;
+}
+
+/* 测试图片 */
+.fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+}
+
+/* 底部 */
+.footer {
+    padding: 20px;
+    text-align: center;
+    background: #ADADAD;
+}
+
+/* 响应式布局 - 在屏幕设备宽度尺寸小于 700px 时, 让两栏上下堆叠显示 */
+@media screen and (max-width: 700px) {
+    .row {   
+        flex-direction: column;
+    }
+}
+
+/* 响应式布局 - 在屏幕设备宽度尺寸小于 400px 时, 让导航栏目上下堆叠显示 */
+@media screen and (max-width: 400px) {
+    .navbar a {
+        float: none;
+        width: 100%;
+    }
+}
+</style>
+</head>
+<body onload="checkCookie()">
+<div class="header" style="color: #CE0000">
+  <h1>钻石领域官方网站</h1>
+  <p>Diamond Realm</p>
+</div>
+
+<div class="navbar">
+  <a href="index.html">首页</a>
+  <a href="faq.html">问题反馈</a>
+  <a href="login.html">注册</a>
+  <a href="download.html" class="right">服务器客户端/帮助文档下载区</a>
+</div>
+
+<div class="row">
+  <div class="side" style="color: #000000">
+      <h2>侧边菜单</h2>
+      <input id="myInput" value="输入搜索的内容...">
+<button id="myBtn" onclick="javascript:alert('想得美，搜索个毛线啊')">搜索</button>
+      <div class="fakeimg" style="height:200px;"><img src="image/logo.png" width="150" height="150"><div align="center" style="color: #CE0000">船新のLOGO！</div></div>
+      
+      
+      <h3>更多内容</h3><br>
+      <div class="fakeimg" style="height:60px;"><a href="https://github.com/yxianxt/yxianxt.github.io/">Github源码库</a></div><br>
+      <div class="fakeimg" style="height:60px;"><a href="faq.html">问题反馈-FAQ</a></div><br>
+      <div class="fakeimg" style="height:60px;"><a href="http://www.laoduanbee.com:8888/">官方合作-莱蒙庄园</a></div><br>
+      <div class="fakeimg" style="height:60px;"><a href="information.html">服主联系方式</a></div><br>
+      <div class="fakeimg" style="height:60px;"><a href="fz1.html">服主个人网站</a></div><br>
+  </div>
+  <div class="main" style="color: #0000E3">
+      <h2>公告栏</h2>
+      <div class="fakeimg" style="height:200px;"><h4>所有服务器将随游戏版本更新而更新</h4></div>
+      <p></p>
+    
+      <br>
+      <h2>服务器地址</h2>
+      <h3>【介绍已经转移到下面按钮】</h3>
+      <div class="fakeimg" style="height:200px;">
+        <h4>趣味娱乐服1.16.0/1.16.1/1.16.10：地址103.107.189.51，端口35353
+        <br>原版娱乐服1.16.0/1.16.1/1.16.10：地址103.107.189.51，端口19133
+        <br>Java生存服1.16.1：地址103.107.189.51，端口25172</h4><input type="button" value="查看服务器介绍" onclick="javascrtpt:window.location.href='index2.html'"></div>
+      <p>---</p>
+  </div>
+  
+
+</div>
+
+<div class="footer">
+  <p>2020@Diamond Realm All Rights Reserved 由Lemon8864 and Yxianxt设计，遵守开源协议</p>
+</div>
+
+</body>
+</html>
